@@ -9,4 +9,6 @@ export default defineEventHandler(async (event) => {
     products.push(product)
 
     writeFileSync("server/products.json", JSON.stringify(products))
+
+    return "Product successfully created";
 })

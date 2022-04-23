@@ -8,4 +8,6 @@ export default defineEventHandler(async (event) => {
     console.log(products.filter(x => x.id !== productId))
 
     writeFileSync("server/products.json", JSON.stringify(products))
+
+    return "Product successfully deleted";
 })

@@ -21,14 +21,21 @@ const deleteProduct = async () => {
 </script>
 
 <template>
-    <div class="border shadow-md rounded-lg p-4">
-        <NuxtLink :to="`/product/${product.id}`">
-            <img class="w-64 h-64 object-cover" width="300" height="300" :src="product.image" :alt="product.name" loading="lazy">
-        </NuxtLink>
-        <h2 class="my-4 font-semibold">{{ product.name }}</h2>
-        <p>{{ product.description }}</p>
-        <Button @click="addToList" class="w-full mt-4">Add</Button>
-        <Button @click="deleteProduct" class="w-full mt-4">Delete</Button>
+    <div class="border shadow-md rounded-lg m-2">
+        <div class="flex justify-end ">
+            <button><img src="~/assets/svg/x.svg" class="w-6 h-6"/></button>
+        </div>
+        <div class="p-2">
+            <div class="flex justify-center">
+                <NuxtLink :to="`/product/${product.id}`">
+                    <img class="w-64 h-64 object-cover border" width="300" height="300" :src="product.image" :alt="product.name" loading="lazy">
+                </NuxtLink>
+            </div>
+            <h2 class="my-4 font-semibold">{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <Button @click="addToList" class="w-full mt-4">Add</Button>
+            <Button @click="deleteProduct" class="w-full mt-4">Delete</Button>
+        </div>
     </div>
 </template>
 

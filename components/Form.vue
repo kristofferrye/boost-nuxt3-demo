@@ -1,5 +1,5 @@
 <script setup>
-const emit = defineEmits(["added"])
+const emit = defineEmits(["added, toggleShowModal"])
 const formData = ref({})
 const submitHandler = async () => {
     const { name, description, image } = formData.value
@@ -12,6 +12,7 @@ const submitHandler = async () => {
     try {
         await useFetch("/api/products", { method: "post", body: productData })
         emit("added")
+        emit("toggleShowModal")
         formData.value = {}
     } catch (error) {
         console.log(error)
@@ -20,7 +21,7 @@ const submitHandler = async () => {
 </script>
 
 <template>
-<div class="w-1/3 ml-10 mt-20">
+<div class="mt-10">
     <form @submit.prevent="submitHandler">
         <div class="mv-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
