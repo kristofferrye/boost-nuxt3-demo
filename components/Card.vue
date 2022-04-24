@@ -6,9 +6,7 @@ const props = defineProps({
 
 const { addToCart } = useCart()
 
-const addToList = () => {
-    addToCart(props.product)
-}
+const addToList = () => { addToCart(props.product) }
 const deleteProduct = async () => {
     try {
         await useFetch("/api/products", { method: "delete", body: props.product.id })
@@ -21,20 +19,19 @@ const deleteProduct = async () => {
 </script>
 
 <template>
-    <div class="border shadow-md rounded-lg m-2">
-        <div class="flex justify-end ">
-            <button><img src="~/assets/svg/x.svg" class="w-6 h-6"/></button>
-        </div>
-        <div class="p-2">
+    <div class="border shadow-md rounded-lg m-2 w-full md:w-60">
+        <div class="flex justify-end"><button @click="deleteProduct" title="Delete"><img src="~/assets/svg/x.svg" class="w-6 h-6"/></button></div>
+        <div class="pt-1 pb-4 px-4">
             <div class="flex justify-center">
-                <NuxtLink :to="`/product/${product.id}`">
-                    <img class="w-64 h-64 object-cover border" width="300" height="300" :src="product.image" :alt="product.name" loading="lazy">
-                </NuxtLink>
+                <!-- <NuxtLink :to="`/product/${product.id}`"><img class="w-64 h-64 object-cover" :src="product.image" :alt="product.name" loading="lazy"></NuxtLink> -->
+                <a :href="`/product/${product.id}`"><img class="w-64 h-64 object-cover" :src="product.image" :alt="product.name" loading="lazy"></a>
             </div>
-            <h2 class="my-4 font-semibold">{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
+            <div class="h-28 px-2 ">
+                <h2 class="my-4 font-semibold flex justify-center">{{ product.name }}</h2>
+                <p class="flex flex-wrap justify-center">{{ product.description }}</p>
+            </div>
+            <p class="flex flex-wrap justify-center text-3xl">{{ product.price }} kr</p>
             <Button @click="addToList" class="w-full mt-4">Add</Button>
-            <Button @click="deleteProduct" class="w-full mt-4">Delete</Button>
         </div>
     </div>
 </template>
