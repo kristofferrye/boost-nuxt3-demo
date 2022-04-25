@@ -1,5 +1,7 @@
 <script setup>
 const emit = defineEmits(["added, close"])
+
+const { $listify } = useNuxtApp() 
 // const formData = ref({})
 const formData = ref({
   name: '',
@@ -16,6 +18,11 @@ const handleSubmit = async () => {
         formData.value = {}
     } catch (error) {
         console.log(error)
+    }
+
+    let allergyList
+    if (allergies) {
+        allergyList = $listify(allergies)
     }
 }
 </script>
