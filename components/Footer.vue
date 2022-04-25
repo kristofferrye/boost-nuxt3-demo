@@ -1,5 +1,5 @@
 <template>
-<footer class="bg-slate-400 h-9 flex justify-center ">
+<footer class="bg-black text-white h-9 flex justify-center items-center p-36">
     <span>FOOTER</span>
 </footer>
 </template>

@@ -7,6 +7,7 @@ const props = defineProps({
 const { addToCart } = useCart()
 
 const addToList = () => { addToCart(props.product) }
+
 const deleteProduct = async () => {
     try {
         await useFetch("/api/products", { method: "delete", body: props.product.id })
