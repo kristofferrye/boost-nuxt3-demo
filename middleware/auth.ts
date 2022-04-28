@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware((to, from) => {
 
-    const isAuthenticated = false
+    const isAuthenticated = true
 
     const hasSecretAccess = to.query.secretKey === "123"
 
