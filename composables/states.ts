@@ -4,6 +4,8 @@ interface Product {
     description: string
     image: string
     price: number
+    sugarfree: Boolean
+    allergies: Array<string>
 }
 
 interface CartProduct extends Product {
