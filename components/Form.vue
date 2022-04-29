@@ -12,7 +12,8 @@ const handleSubmit = async () => {
     const { name, description, image } = formData.value
     const productData = { id: `${Math.floor(Math.random() * 10000) + 1000}`, name, description, image }
     try {
-        await useFetch("/api/products", { method: "post", body: productData })
+        // await useFetch("/api/products", { method: "post", body: productData })
+        await useFetch("https://monster-store.herokuapp.com/food-items", { method: "post", body: productData })
         emit("added")
         emit("close")
         formData.value = {}

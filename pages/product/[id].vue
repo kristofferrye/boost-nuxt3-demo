@@ -1,6 +1,7 @@
 <script setup>
 const route = useRoute()
-const { data: product } = await useFetch(`/api/product/${route.params.id}`)
+// const { data: product } = await useFetch(`/api/product/${route.params.id}`)
+const { data: product } = await useFetch(`https://monster-store.herokuapp.com/food-items/${route.params.id}`)
 
 definePageMeta({
     middleware: ["logger", "auth"] 
