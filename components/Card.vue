@@ -10,7 +10,8 @@ const addToList = () => { addToCart(props.product) }
 
 const deleteProduct = async () => {
     try {
-        await useFetch("/api/products", { method: "delete", body: props.product.id })
+        // await useFetch("/api/products", { method: "delete", body: props.product.id })
+        await useFetch(`https://monster-store.herokuapp.com/food-items${props.product.id}`, { method: "delete"})
         emit("deleted")
         console.log(`Deleting product with id: ${props.product.id}`)
     } catch (error) {
