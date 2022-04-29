@@ -6,7 +6,8 @@
     const showModal = ref(false)
     const toggleShowModal = () => showModal.value = !showModal.value
 
-    const { data: products, refresh } = await useFetch("/api/products")
+    // const { data: products, refresh } = await useFetch("/api/products")
+    const { data: products, refresh } = await useFetch("https://monster-store.herokuapp.com/food-items")
 
     const filter = ref({})
 
