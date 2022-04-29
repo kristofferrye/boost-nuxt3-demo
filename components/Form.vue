@@ -1,16 +1,18 @@
 <script setup>
 const emit = defineEmits(["added, close"])
 
-const { $listify } = useNuxtApp() 
-// const formData = ref({})
+const { $listify } = useNuxtApp()
 const formData = ref({
   name: '',
   description: '',
   image: 'https://static.partyking.org/fit-in/1300x0/products/original/monster-energy-drink-3.jpg',
+  price: 99,
+  sugarfree: true,
+  allergies: ["something", "other"]
 })
 const handleSubmit = async () => {
-    const { name, description, image } = formData.value
-    const productData = { id: `${Math.floor(Math.random() * 10000) + 1000}`, name, description, image }
+    const { name, description, image, price, sugarfree, allergies } = formData.value
+    const productData = { id: `${Math.floor(Math.random() * 10000) + 1000}`, name, description, image, price, sugarfree, allergies }
     try {
         // await useFetch("/api/products", { method: "post", body: productData })
         await useFetch("https://monster-store.herokuapp.com/food-items", { method: "post", body: productData })
@@ -21,7 +23,6 @@ const handleSubmit = async () => {
         console.log(error)
     }
 
-    let allergyList
     if (allergies) {
         allergyList = $listify(allergies)
     }
