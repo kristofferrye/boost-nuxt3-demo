@@ -35,9 +35,9 @@ const handleSubmit = async () => {
         <FormKit type="text" label="Product Name" name="name" placeholder="Your name" validation="required"/>
         <FormKit type="text" label="Product Description" name="description" placeholder="Description" validation="required"/>
         <FormKit type="text" label="Image" name="image" placeholder="Image URL" validation="required"/>
-        <FormKit type="select" label="Favorite Food" name="favorite_food" placeholder="Choose a food" :options="['Pizza', 'Ice Cream', 'Burger']"/>
-        <FormKit type="checkbox" label="Favorite Food" name="sugarfree"  :options="['Sugar free',]"/>
-        <FormKit type="textarea" name="instructions" label="Special Instructions" placeholder="Allergies? No-contact delivery? Let us know." validation="length:0,120" validation-visibility="live" :validation-messages="{ length: 'Instructions cannot be more than 120 characters.', }"/>
+        <!--<FormKit type="select" label="Favorite Food" name="favorite_food" placeholder="Choose a food" :options="['Pizza', 'Ice Cream', 'Burger']"/> -->
+        <!-- <FormKit type="checkbox" label="Favorite Food" name="sugarfree"  :options="['Sugar free']"/> -->
+        <!-- <FormKit type="textarea" name="instructions" label="Special Instructions" placeholder="Allergies? No-contact delivery? Let us know." validation="length:0,120" validation-visibility="live" :validation-messages="{ length: 'Instructions cannot be more than 120 characters.', }"/> -->
     </FormKit>
 </div>
 </template>
