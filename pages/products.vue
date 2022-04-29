@@ -10,6 +10,7 @@
     const { data: products, refresh } = await useFetch("https://monster-store.herokuapp.com/food-items")
 
     const filter = ref({})
+    filter.value.sugarfree = false
 
     const filteredProducts = computed(() => {
         return products.value.filter(p => p.sugarfree === filter.value.sugarfree)
