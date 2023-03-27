@@ -1,5 +1,7 @@
 # Nuxt 3 Minimal Starter
 
+https://api.securityscorecards.dev/projects/github.com/kristofferrye/boost-nuxt3-demo/badge?style=flat
+
 We recommend to look at the [documentation](https://v3.nuxtjs.org).
 
 ## Setup
