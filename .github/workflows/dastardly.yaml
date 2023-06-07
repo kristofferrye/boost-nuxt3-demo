@@ -17,7 +17,7 @@ jobs:
         continue-on-error: true
         uses: PortSwigger/dastardly-github-action@main
         with:
-          target-url: 'https://b2bprocurement.elkds-dev.elkjop.com/'
+          target-url: 'https://www.elkjop.no/'
 
       - name: Publish Test Report
         if: always()
